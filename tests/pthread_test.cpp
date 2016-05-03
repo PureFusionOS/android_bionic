@@ -897,7 +897,7 @@ class RwlockKindTestHelper {
   pthread_rwlock_t lock;
 
  public:
-  RwlockKindTestHelper(int kind_type) {
+  explicit RwlockKindTestHelper(int kind_type) {
     InitRwlock(kind_type);
   }
 
@@ -1510,7 +1510,7 @@ TEST(pthread, pthread_mutexattr_gettype) {
 struct PthreadMutex {
   pthread_mutex_t lock;
 
-  PthreadMutex(int mutex_type) {
+  explicit PthreadMutex(int mutex_type) {
     init(mutex_type);
   }
 
@@ -1611,7 +1611,7 @@ class MutexWakeupHelper {
   }
 
  public:
-  MutexWakeupHelper(int mutex_type) : m(mutex_type) {
+  explicit MutexWakeupHelper(int mutex_type) : m(mutex_type) {
   }
 
   void test() {
