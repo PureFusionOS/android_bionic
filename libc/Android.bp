@@ -613,13 +613,6 @@ cc_library_static {
                     "upstream-openbsd/lib/libc/string/strcat.c",
                 ],
             },
-            cortex_a73: {
-                exclude_srcs: [
-                    "upstream-openbsd/lib/libc/string/memmove.c",
-                    "upstream-openbsd/lib/libc/string/stpcpy.c",
-                    "upstream-openbsd/lib/libc/string/strcat.c",
-                ],
-            },
             denver: {
                 exclude_srcs: [
                     "upstream-openbsd/lib/libc/string/memchr.c",
@@ -631,13 +624,6 @@ cc_library_static {
             krait: {
                 exclude_srcs: [
                     "upstream-openbsd/lib/libc/string/memchr.c",
-                    "upstream-openbsd/lib/libc/string/memmove.c",
-                    "upstream-openbsd/lib/libc/string/stpcpy.c",
-                    "upstream-openbsd/lib/libc/string/strcat.c",
-                ],
-            },
-            kryo: {
-                exclude_srcs: [
                     "upstream-openbsd/lib/libc/string/memmove.c",
                     "upstream-openbsd/lib/libc/string/stpcpy.c",
                     "upstream-openbsd/lib/libc/string/strcat.c",
@@ -983,32 +969,6 @@ cc_library_static {
                     "bionic/__strcpy_chk.cpp",
                 ],
             },
-            cortex_a73: {
-                srcs: [
-                    "arch-arm/cortex-a7/bionic/memset.S",
-
-                    "arch-arm/denver/bionic/memcpy.S",
-                    "arch-arm/denver/bionic/memmove.S",
-                    "arch-arm/denver/bionic/__strcat_chk.S",
-                    "arch-arm/denver/bionic/__strcpy_chk.S",
-
-                    "arch-arm/krait/bionic/strcmp.S",
-
-                    "arch-arm/cortex-a15/bionic/stpcpy.S",
-                    "arch-arm/cortex-a15/bionic/strcat.S",
-                    "arch-arm/cortex-a15/bionic/strcpy.S",
-                    "arch-arm/cortex-a15/bionic/strlen.S",
-                ],
-                exclude_srcs: [
-                    "arch-arm/generic/bionic/memcpy.S",
-                    "arch-arm/generic/bionic/memset.S",
-                    "arch-arm/generic/bionic/strcmp.S",
-                    "arch-arm/generic/bionic/strcpy.S",
-                    "arch-arm/generic/bionic/strlen.c",
-                    "bionic/__strcat_chk.cpp",
-                    "bionic/__strcpy_chk.cpp",
-                ],
-            },
             denver: {
                 srcs: [
                     "arch-arm/denver/bionic/memcpy.S",
@@ -1062,32 +1022,7 @@ cc_library_static {
                     "bionic/__strcpy_chk.cpp",
                 ],
             },
-            kryo: {
-                srcs: [
-                    "arch-arm/kryo/bionic/memcpy.S",
-                    "arch-arm/cortex-a7/bionic/memset.S",
-                    "arch-arm/krait/bionic/strcmp.S",
-                    "arch-arm/krait/bionic/__strcat_chk.S",
-                    "arch-arm/krait/bionic/__strcpy_chk.S",
 
-                    // Use cortex-a15 versions of strcat/strcpy/strlen.
-                    "arch-arm/cortex-a15/bionic/stpcpy.S",
-                    "arch-arm/cortex-a15/bionic/strcat.S",
-                    "arch-arm/cortex-a15/bionic/strcpy.S",
-                    "arch-arm/cortex-a15/bionic/strlen.S",
-
-                    "arch-arm/denver/bionic/memmove.S",
-                ],
-                exclude_srcs: [
-                    "arch-arm/generic/bionic/memcpy.S",
-                    "arch-arm/generic/bionic/memset.S",
-                    "arch-arm/generic/bionic/strcmp.S",
-                    "arch-arm/generic/bionic/strcpy.S",
-                    "arch-arm/generic/bionic/strlen.c",
-                    "bionic/__strcat_chk.cpp",
-                    "bionic/__strcpy_chk.cpp",
-                ],
-            },
         },
         arm64: {
             srcs: [
@@ -1128,22 +1063,6 @@ cc_library_static {
                     "arch-arm64/generic/bionic/memcpy.S",
                     "arch-arm64/generic/bionic/memmove.S",
                     "arch-arm64/generic/bionic/memset.S",
-                ],
-            },
-            cortex_a73: {
-                srcs: [
-                    "arch-arm64/cortex-a53/bionic/memmove.S",
-                ],
-                exclude_srcs: [
-                    "arch-arm64/generic/bionic/memmove.S",
-                ],
-            },
-            kryo: {
-                srcs: [
-                    "arch-arm64/kryo/bionic/memcpy.S",
-                ],
-                exclude_srcs: [
-                    "arch-arm64/generic/bionic/memcpy.S",
                 ],
             },
         },
