@@ -3567,7 +3567,7 @@ std::vector<android_namespace_t*> init_default_namespaces(const char* executable
 
   const char *interp = phdr_table_get_interpreter_name(somain->phdr, somain->phnum,
                                                        somain->load_bias);
-  const char* bname = (interp != nullptr) ? basename(interp) : nullptr;
+  const char* bname = basename(interp);
 
   g_is_asan = bname != nullptr &&
               (strcmp(bname, "linker_asan") == 0 ||
